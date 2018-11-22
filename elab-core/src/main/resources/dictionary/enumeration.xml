@@ -1,0 +1,744 @@
+<?xml version="1.0"?>
+<enumerations>
+    <enumeration type="10001" remark="小区环境">
+        <value name="游泳池" val="1"></value>
+        <value name="跑道" val="2"></value>
+        <value name="网球馆" val="3"></value>
+        <value name="幼儿园" val="4"></value>
+        <value name="便利店" val="5"></value>
+    </enumeration>
+
+    <enumeration type="10002" remark="类型">
+        <value name="类型1" val="1"></value>
+        <value name="类型2" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10003" remark="学校属性">
+        <value name="幼儿园公立摇号" val="10619901"></value>
+        <value name="幼儿园公立直接入读" val="10619802"></value>
+        <value name="幼儿园私立摇号" val="10609903"></value>
+        <value name="幼儿园私立直接入读" val="10609804"></value>
+        <value name="小学普通学位：直接入读" val="20599701"></value>
+        <value name="小学普通学区：优先入读" val="20599602"></value>
+        <value name="小学普通无入读资格" val="20590003"></value>
+        <value name="小学市重点学位：直接入读" val="20589704"></value>
+        <value name="小学市重点学区：优先入读" val="20589605"></value>
+        <value name="小学市重点无入读资格" val="20580006"></value>
+        <value name="小学省重点学位：直接入读" val="20579707"></value>
+        <value name="小学省重点学区：优先入读" val="20579608"></value>
+        <value name="小学省重点无入读资格" val="20570009"></value>
+        <value name="小学国际学校" val="20560010"></value>
+        <value name="初中普通学位：直接入读" val="30599701"></value>
+        <value name="初中普通学区：优先入读" val="30599602"></value>
+        <value name="初中普通无入读资格" val="30590003"></value>
+        <value name="初中市重点学位：直接入读" val="30589704"></value>
+        <value name="初中市重点学区：优先入读" val="30589605"></value>
+        <value name="初中市重点无入读资格" val="30580006"></value>
+        <value name="初中省重点学位：直接入读" val="30579707"></value>
+        <value name="初中省重点学区：优先入读" val="30579608"></value>
+        <value name="初中省重点无入读资格" val="30570009"></value>
+        <value name="初中国际学校" val="30560010"></value>
+        <value name="高中普通" val="40590001"></value>
+        <value name="高中市重点" val="40580002"></value>
+        <value name="高中省重点" val="40570003"></value>
+        <value name="高中国际学校" val="40560004"></value>
+        <value name="大学" val="50000001"></value>
+    </enumeration>
+
+    <enumeration type="10004" remark="周边配套类型">
+        <value name="便利店" val="1"></value>
+        <value name="菜市场" val="2"></value>
+        <value name="超市" val="3"></value>
+        <value name="商城" val="4"></value>
+        <value name="医院" val="5"></value>
+        <value name="私人诊所" val="6"></value>
+        <value name="疗养院" val="7"></value>
+        <value name="卫生站" val="8"></value>
+        <value name="公园" val="9"></value>
+        <value name="湖/河/江" val="10"></value>
+        <value name="山" val="11"></value>
+        <value name="其他" val="12"></value>
+    </enumeration>
+
+
+    <enumeration type="10005" remark="不利因素">
+        <value name="噪音类-铁轨" val="1"></value>
+        <value name="噪音类-航道" val="2"></value>
+        <value name="噪音类-码头" val="3"></value>
+        <value name="噪音类-高速" val="4"></value>
+        <value name="噪音类-高架" val="5"></value>
+        <value name="噪音类-轻轨" val="6"></value>
+        <value name="噪音类-其他" val="7"></value>
+        <value name="辐射-变电站" val="8"></value>
+        <value name="辐射-高压线" val="9"></value>
+        <value name="辐射-核电站" val="10"></value>
+        <value name="辐射-其他" val="11"></value>
+        <value name="气味-垃圾场" val="12"></value>
+        <value name="气味-污水处理厂" val="13"></value>
+        <value name="气味-化工厂" val="14"></value>
+        <value name="气味-其他" val="15"></value>
+        <value name="其他类-其他" val="16"></value>
+    </enumeration>
+
+    <enumeration type="10006" remark="是否内推">
+        <value name="内部" val="1"></value>
+        <value name="外部" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10007" remark="楼盘状态">
+        <value name="在售" val="1"></value>
+        <value name="未开" val="2"></value>
+        <value name="售罄" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10008" remark="楼盘价格单位">
+        <value name="元/平方米" val="1"></value>
+        <value name="万元/套" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10009" remark="楼盘类型">
+        <value name="内部" val="1"></value>
+        <value name="外部" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10010" remark="楼盘来源">
+        <value name="房天下" val="1"></value>
+        <value name="新浪乐居" val="2"></value>
+        <value name="elab" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10011" remark="楼盘上下架">
+        <value name="上架" val="1"></value>
+        <value name="下架" val="-1"></value>
+    </enumeration>
+
+
+    <!-- 3已被楼盘分类占用 -->
+    <enumeration type="10012" remark="图片分类">
+        <value name="外立面图" val="1"></value>
+        <value name="楼盘效果图" val="2"></value>
+        <value name="楼盘实景图" val="3"></value>
+        <value name="户型分享图" val="4"></value>
+        <value name="效果图" val="5"></value>
+        <value name="样板间" val="6"></value>
+        <value name="实景图" val="7"></value>
+        <value name="周边配套" val="8"></value>
+        <value name="交通图" val="9"></value>
+        <value name="夜景图" val="10"></value>
+    </enumeration>
+
+    <enumeration type="10013" remark="支付日志类型">
+        <value name="支付" val="01"></value>
+        <value name="后台通知" val="02"></value>
+    </enumeration>
+
+    <enumeration type="10014" remark="支付日志支付类型">
+        <value name="支付宝" val="001"></value>
+        <value name="微信JS支付" val="003"></value>
+        <value name="微信Native支付" val="004"></value>
+    </enumeration>
+
+    <enumeration type="10015" remark="定时任务日志类型">
+        <value name="开始" val="S"></value>
+        <value name="结束" val="E"></value>
+    </enumeration>
+
+    <enumeration type="10016" remark="属性类型">
+        <value name="选择框" val="1"></value>
+        <value name="文本输入框" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10017" remark="mongodb系统日志类型">
+        <value name="Debug" val="Debug"></value>
+        <value name="Info" val="Info"></value>
+        <value name="Error" val="Error"></value>
+    </enumeration>
+
+    <enumeration type="10018" remark="场景状态">
+        <value name="在售" val="1"></value>
+        <value name="售馨" val="2"></value>
+        <value name="待售" val="3"></value>
+        <value name="草稿" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10019" remark="物业类型">
+        <value name="住宅" val="1"></value>
+        <value name="商业" val="2"></value>
+        <value name="办公" val="3"></value>
+        <value name="工业" val="4"></value>
+        <value name="科研" val="5"></value>
+        <value name="政策房" val="6"></value>
+        <value name="其他" val="7"></value>
+    </enumeration>
+
+    <enumeration type="10020" remark="建筑类型">
+        <value name="高层" val="1"></value>
+        <value name="多层" val="2"></value>
+        <value name="公寓" val="3"></value>
+        <value name="商铺" val="4"></value>
+        <value name="集中商业" val="5"></value>
+        <value name="联排别墅" val="6"></value>
+        <value name="叠拼别墅" val="7"></value>
+        <value name="双拼别墅" val="8"></value>
+        <value name="独栋别墅" val="9"></value>
+    </enumeration>
+
+    <enumeration type="10021" remark="户型图片类型">
+        <value name="户型图" val="1"></value>
+        <value name="效果图" val="2"></value>
+        <value name="样板图" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10022" remark="户型状态">
+        <value name="在售" val="1"></value>
+        <value name="售罄" val="2"></value>
+        <value name="未开" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10023" remark="菜单状态">
+        <value name="可用" val="1"></value>
+        <value name="不可用" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10024" remark="菜单级别">
+        <value name="一级" val="1"></value>
+        <value name="二级" val="2"></value>
+        <value name="三级" val="3"></value>
+        <value name="四级" val="4"></value>
+        <value name="五级" val="5"></value>
+    </enumeration>
+
+    <enumeration type="10025" remark="学校状态">
+        <value name="规划中" val="1"></value>
+        <value name="已建成" val="2"></value>
+        <value name="已开学" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10026" remark="周边or小区内">
+        <value name="周边" val="1"></value>
+        <value name="小区内" val="0"></value>
+    </enumeration>
+
+    <enumeration type="10027" remark="商业配套信息类型">
+        <value name="无" val="0"></value>
+        <value name="底商" val="1"></value>
+        <value name="小mall" val="2"></value>
+        <value name="商业街" val="3"></value>
+        <value name="大mall" val="4"></value>
+        <value name="大mall+商业" val="5"></value>
+    </enumeration>
+
+    <enumeration type="10028" remark="商业配套信息状态">
+        <value name="已开业" val="0"></value>
+        <value name="未开业" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10029" remark="车站类型">
+        <value name="公交" val="1"></value>
+        <value name="地铁" val="2"></value>
+        <value name="高铁" val="3"></value>
+        <value name="其他" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10030" remark="帖子类型">
+        <value name="置顶" val="1"></value>
+        <value name="推荐" val="2"></value>
+        <value name="热门" val="3"></value>
+        <value name="普通" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10031" remark="帖子类型-解释说明">
+        <value name="置顶" val="1"></value>
+        <value name="推荐" val="2"></value>
+        <value name="热门" val="3"></value>
+        <value name="普通" val="4"></value>
+        <value name="置顶,推荐" val="1,2"></value>
+        <value name="置顶,热门" val="1,3"></value>
+        <value name="推荐,热门" val="2,3"></value>
+        <value name="置顶,推荐,热门" val="1,2,3"></value>
+    </enumeration>
+
+    <enumeration type="10032" remark="资金账户类型">
+        <value name="一般会员账户" val="0"></value>
+        <value name="平台总账户" val="1"></value>
+        <value name="结算专用账户" val="2"></value>
+        <value name="手续费专用账户" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10033" remark="类型可用">
+        <value name="是" val="0"></value>
+        <value name="否" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10034" remark="使用场景">
+        <value name="全部" val="全部"></value>
+        <value name="楼盘认筹" val="楼盘认筹"></value>
+        <value name="楼盘认购" val="楼盘认购"></value>
+        <value name="空间定制" val="空间定制"></value>
+    </enumeration>
+
+    <enumeration type="10035" remark="业务类型">
+        <value name="楼盘" val="楼盘"></value>
+        <value name="楼栋" val="楼栋"></value>
+        <value name="户型" val="户型"></value>
+        <value name="房源" val="房源"></value>
+    </enumeration>
+
+    <enumeration type="10036" remark="子订单类别">
+        <value name="认筹" val="0"></value>
+        <value name="认购" val="1"></value>
+        <value name="首付" val="2"></value>
+        <value name="尾款" val="3"></value>
+        <value name="退款" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10037" remark="币种选择">
+        <value name="RMB" val="0"></value>
+        <value name="美元" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10038" remark="子订单状态">
+        <value name="未付款" val="0"></value>
+        <value name="部分付款" val="1"></value>
+        <value name="付款完成" val="2"></value>
+        <value name="作废" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10039" remark="线上or线下">
+        <value name="线上" val="0"></value>
+        <value name="线下" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10040" remark="客户组选择">
+        <value name="普通用户" val="0"></value>
+        <value name="系统用户" val="1"></value>
+        <value name="销售用户" val="2"></value>
+        <value name="运营用户" val="3"></value>
+        <value name="设计师用户" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10041" remark="客户来源">
+        <value name="平台" val="pt"></value>
+        <value name="新浪微博" val="swb"></value>
+        <value name="微信" val="wx"></value>
+        <value name="QQ" val="qq"></value>
+    </enumeration>
+
+    <enumeration type="10042" remark="客户帐号状态">
+        <value name="待激活" val="0"></value>
+        <value name="生效" val="1"></value>
+        <value name="冻结" val="2"></value>
+        <value name="失效" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10043" remark="支付日志状态">
+        <value name="未支付" val="0"></value>
+        <value name="支付成功" val="1"></value>
+        <value name="支付失败" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10044" remark="户型类型">
+        <value name="建筑" val="1"></value>
+        <value name="套内" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10045" remark="户型定制类型">
+        <value name="普通" val="0"></value>
+        <value name="空间定制" val="1"></value>
+        <value name="户型定制" val="2"></value>
+        <value name="户型空间定制" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10046" remark="推送消息类型">
+        <value name="认筹剩余时间提醒" val="0"></value>
+        <value name="开始认筹" val="1"></value>
+        <value name="认筹成功与失败" val="2"></value>
+        <value name="认购剩余天数提醒" val="3"></value>
+        <value name="认筹未支付订单提醒" val="4"></value>
+        <value name="站内信" val="5"></value>
+    </enumeration>
+
+    <enumeration type="10047" remark="户型特征步骤">
+        <value name="第一步" val="0"></value>
+        <value name="第二步" val="1"></value>
+        <value name="第三步" val="2"></value>
+        <value name="第四步" val="3"></value>
+        <value name="最后一步" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10048" remark="户型特征状态">
+        <value name="可用" val="1"></value>
+        <value name="不可用" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10049" remark="户型特征图片类型">
+        <value name="特色图片" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10050" remark="户型特征图片数量">
+        <value name="step=0" val="0"></value>
+        <value name="step=1" val="1"></value>
+        <value name="step=2" val="1"></value>
+        <value name="step=3" val="10"></value>
+    </enumeration>
+
+    <enumeration type="10051" remark="子户型别名">
+        <value name="入户层" val="1"></value>
+        <value name="二层" val="2"></value>
+        <value name="三层" val="3"></value>
+        <value name="四层" val="4"></value>
+        <value name="五层" val="5"></value>
+    </enumeration>
+
+    <enumeration type="10052" remark="房源状态">
+        <value name="在售" val="1"></value>
+        <value name="售馨" val="2"></value>
+        <value name="未开" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10053" remark="后台用户类型">
+        <value name="系统用户" val="1"></value>
+        <value name="开发商" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10054" remark="服务类型">
+        <value name="空间变形" val="1"></value>
+        <value name="尊享服务" val="2"></value>
+        <value name="在线实时服务" val="3"></value>
+        <value name="vip服务" val="4"></value>
+        <value name="特色服务" val="5"></value>
+        <value name="预约到店服务项" val="6"></value>
+    </enumeration>
+
+    <enumeration type="10055" remark="状态">
+        <value name="未分配" val="0"></value>
+        <value name="已分配" val="1"></value>
+        <value name="已加入" val="2"></value>
+        <value name="已过期" val="3"></value>
+        <value name="已发布" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10056" remark="活动类型">
+        <value name="线下看房" val="100001"></value>
+        <value name="线下礼包" val="101001"></value>
+        <value name="VIP+礼包" val="101002"></value>
+        <value name="线上预约" val="102001"></value>
+        <value name="线上订阅" val="102002"></value>
+        <value name="最新动态" val="102003"></value>
+        <value name="其他" val="999999"></value>
+    </enumeration>
+
+    <enumeration type="10057" remark="广告位上下架状态">
+        <value name="待上架" val="0"></value>
+        <value name="已上架" val="1"></value>
+        <value name="已下架" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10058" remark="审核状态">
+        <value name="待审核" val="0"></value>
+        <value name="审核通过" val="1"></value>
+        <value name="审核未通过" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10059" remark="是否采纳状态">
+        <value name="初始" val="0"></value>
+        <value name="采纳" val="1"></value>
+        <value name="未采纳" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10060" remark="新闻类别">
+        <value name="其他" val="0"></value>
+        <value name="帮助中心" val="1"></value>
+        <value name="资讯中心" val="2"></value>
+        <value name="今日焦点" val="3"></value>
+        <value name="畅想家服务" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10061" remark="楼栋进度状态">
+        <value name="有效" val="1"></value>
+        <value name="无效" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10062" remark="部署项目类型">
+        <value name="内测版本" val="01"></value>
+        <value name="发布版本" val="02"></value>
+    </enumeration>
+
+    <enumeration type="10063" remark="项目类型">
+        <value name="手机端" val="00"></value>
+        <value name="H5" val="01"></value>
+        <value name="WEB" val="02"></value>
+    </enumeration>
+
+    <enumeration type="10064" remark="项目状态">
+        <value name="生效" val="1"></value>
+        <value name="失效" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10065" remark="部署项目名称">
+        <value name="自由自宅" val="1"></value>
+        <value name="上居" val="2"></value>
+        <value name="CK" val="3"></value>
+        <value name="SaaS Solution" val="4"></value>
+        <value name="著匠" val="5"></value>
+        <value name="天空森林城市" val="6"></value>
+    </enumeration>
+
+    <enumeration type="10066" remark="poi类型">
+        <value name="POI组" val="1"></value>
+        <value name="POI" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10067" remark="广告显示位置">
+        <value name="闪屏页" val="100"></value>
+        <value name="我的自由宅" val="101"></value>
+        <value name="推荐页" val="102"></value>
+        <value name="主题页" val="103"></value>
+        <value name="推荐页-页头" val="104"></value>
+        <value name="户型-推荐户型" val="105"></value>
+        <value name="播客" val="106"></value>
+        <value name="户型-精装风格" val="107"></value>
+
+    </enumeration>
+
+    <enumeration type="10068" remark="排序号">
+        <value name="大" val="1"></value>
+        <value name="中" val="2"></value>
+        <value name="小" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10069" remark="hose_product类型">
+        <value name="3D图" val="1"></value>
+        <value name="天空" val="2"></value>
+        <value name="森林" val="3"></value>
+        <value name="相册" val="4"></value>
+        <value name="城市" val="5"></value>
+    </enumeration>
+
+    <enumeration type="10070" remark="POI类型">
+        <value name="POI组" val="1"></value>
+        <value name="POI" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10071" remark="POI Icon名称">
+        <value name="空中花园" val="img9jhl-img9jhl"></value>
+        <value name="静水浅溪广场" val="img1-img2"></value>
+        <value name="叠翠中心花园" val="img1-img3"></value>
+        <value name="阳光休闲草坪" val="img1-img4"></value>
+        <value name="花田叠溪瀑布" val="img1-img5"></value>
+        <value name="钻石花园殿堂" val="img1-img6"></value>
+        <value name="魔法森林公园" val="img1-img7"></value>
+        <value name="儿童运动操场" val="img1-img8"></value>
+        <value name="亲子花园泳池" val="img1-img10"></value>
+        <value name="生态运动公园" val="img1-img11"></value>
+        <value name="500M 慢跑道" val="img1-img13"></value>
+    </enumeration>
+
+    <enumeration type="10072" remark="户型框架类型">
+        <value name="单层" val="1"></value>
+        <value name="复式" val="2"></value>
+        <value name="别墅" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10073" remark="户型模板是否可变">
+        <value name="是" val="1"></value>
+        <value name="否" val="0"></value>
+    </enumeration>
+
+    <enumeration type="10074" remark="户型模板类型">
+        <value name="未知" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10075" remark="户型模板空间类型">
+        <value name="封闭" val="1"></value>
+        <value name="开放" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10076" remark="精装风格">
+        <value name="新古典" val="1"></value>
+        <value name="新东方" val="2"></value>
+        <value name="轻奢" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10077" remark="精装色系">
+        <value name="浅色系" val="1"></value>
+        <value name="中性色系" val="2"></value>
+        <value name="深色系" val="3"></value>
+        <value name="混搭1" val="4"></value>
+        <value name="混搭2" val="5"></value>
+        <value name="混搭3" val="6"></value>
+    </enumeration>
+
+    <enumeration type="10078" remark="预约到店性别">
+        <value name="女" val="0"></value>
+        <value name="男" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10079" remark="用户表中添加类型">
+        <value name="其他" val="0"></value>
+        <value name="业主" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10080" remark="消息类型">
+        <value name="立即发送" val="1"></value>
+        <value name="定时发送" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10081" remark="是否发送短息">
+        <value name="是" val="1"></value>
+        <value name="否" val="0"></value>
+    </enumeration>
+    <enumeration type="10082" remark="阅读状态">
+        <value name="已读" val="1"></value>
+        <value name="未读" val="0"></value>
+    </enumeration>
+
+    <enumeration type="10083" remark="用户分类">
+        <value name="所有用户" val="0"></value>
+        <value name="潜在用户" val="1"></value>
+        <value name="预约用户" val="2"></value>
+        <value name="验资用户" val="3"></value>
+        <value name="自定义" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10084" remark="预约状态">
+        <value name="已预约" val="1"></value>
+        <value name="已取消" val="-1"></value>
+        <value name="已过期" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10085" remark="推送消息状态">
+        <value name="草稿" val="0"></value>
+        <value name="已发布" val="1"></value>
+        <value name="待发布" val="2"></value>
+        <value name="无效" val="-1"></value>
+    </enumeration>
+
+    <enumeration type="10086" remark="消息类型">
+        <value name="为您推荐" val="2"></value>
+        <value name="系统消息" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10087" remark="页面编号">
+        <value name="homedetail" val="01011031"></value>
+        <value name="homediy" val="01011032"></value>
+        <value name="themedetail" val="01011009"></value>
+        <value name="H5" val="1100"></value>
+        <value name="LifeMap" val="01011008"></value>
+        <value name="为您推荐-消息详情" val="01011005"></value>
+        <value name="系统通知列表" val="01011006"></value>
+    </enumeration>
+
+    <enumeration type="10088" remark="页面编号描述">
+        <value name="homedetail" val="plancode,btype"></value>
+        <value name="homediy" val="plancode"></value>
+        <value name="themedetail" val="themeID"></value>
+        <value name="H5" val="url"></value>
+        <value name="LifeMap" val="tab"></value>
+        <value name="为您推荐-消息详情" val="url"></value>
+        <value name="系统通知列表" val="无"></value>
+    </enumeration>
+
+    <enumeration type="10089" remark="APP项目类别">
+        <value name="上居" val="1"></value>
+        <value name="置业顾问" val="2"></value>
+        <value name="天空森林城市" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10090" remark="文件类型">
+        <value name="音频" val="1"></value>
+        <value name="视频" val="2"></value>
+    </enumeration>
+
+    <enumeration type="10100" remark="部件模版">
+        <value name="1张图16:9" val="1"></value>
+        <value name="1张图1:1" val="2"></value>
+        <value name="1张图高度自适应" val="3"></value>
+        <value name="2张图组成一个1:1的正方形" val="4"></value>
+        <value name="2张图组成一个1:1的正方形" val="5"></value>
+        <value name="2张图组成一个16:9的长方形" val="6"></value>
+        <value name="3张图组成一个16:9的长方形" val="7"></value>
+        <value name="3张图组成一个16:9的长方形" val="8"></value>
+        <value name="4张图组成一个1:1的正方形" val="9"></value>
+        <value name="4张图组成一个1:1的正方形" val="10"></value>
+        <value name="列表模版" val="11"></value>
+    </enumeration>
+
+    <enumeration type="10101" remark="资源类型">
+        <value name="视频" val="1"></value>
+        <value name="音频" val="2"></value>
+        <value name="图片" val="3"></value>
+        <value name="GIF" val="4"></value>
+        <value name="文本" val="5"></value>
+    </enumeration>
+
+
+
+    <enumeration type="10102" remark="素材类型">
+        <value name="图片" val="3"></value>
+        <value name="视频" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10103" remark="首页运营位置模版类型">
+        <value name="模版一" val="12"></value>
+        <value name="模版二" val="13"></value>
+        <value name="模版三" val="14"></value>
+    </enumeration>
+
+    <enumeration type="10104" remark="是否置顶">
+        <value name="不置顶" val="0"></value>
+        <value name="置顶" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10105" remark="选择类型">
+        <value name="生活" val="0"></value>
+        <value name="活动" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10106" remark="播客类型">
+        <value name="米兰垂直森林" val="1"></value>
+        <value name="天空森林城市" val="2"></value>
+        <value name="乐享生活" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10107" remark="直播状态">
+        <value name="正在直播" val="1"></value>
+        <value name="预告" val="2"></value>
+        <value name="直播结束" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10108" remark="固件关联页面ID">
+        <value name="楼盘" val="1"></value>
+        <value name="户型" val="2"></value>
+        <value name="生活" val="3"></value>
+        <value name="直播" val="4"></value>
+    </enumeration>
+
+    <enumeration type="10109" remark="空间分类">
+        <value name="入户方式" val="1"></value>
+        <value name="厨房" val="2"></value>
+        <value name="个性需求" val="3"></value>
+    </enumeration>
+
+    <enumeration type="10110" remark="是否为暗房间">
+        <value name="否" val="0"></value>
+        <value name="是" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10111" remark="是否开放空间">
+        <value name="是" val="0"></value>
+        <value name="否" val="1"></value>
+    </enumeration>
+
+    <enumeration type="10112" remark="是否开放空间">
+        <value name="江景" val="1"></value>
+        <value name="花园" val="2"></value>
+		<value name="叠水景观" val="3"></value>
+    </enumeration>
+    <enumeration type="10113" remark="是否开放空间">
+        <value name="激活" val="1"></value>
+        <value name="未激活" val="-1"></value>
+    </enumeration>
+
+
+</enumerations>

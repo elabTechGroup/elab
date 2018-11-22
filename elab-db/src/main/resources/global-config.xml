@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<global version="0.1">
+    <settings>
+
+    </settings>
+    <!-- 默认用开发环境 -->
+    <logManager system="elab-core" isDebugEnabled="true" defaultEmitter="mockAdapter">
+        <!-- 开发环境用 -->
+        <log name="mockAdapter" type="com.elab.core.log.adapter.Log4jMockAdapter" logDebug="true" logInfo="true">
+        </log>
+        <!-- 测试环境用 -->
+        <log name="slf4jAdapter" type="com.elab.core.log.adapter.Slf4jAdapter" logDebug="false" logInfo="true">
+            <properties>
+                <item>
+                    <key>log4j.rootLogger</key>
+                    <value>info, R</value>
+                </item>
+                <item>
+                    <key>log4j.appender.R</key>
+                    <value>org.apache.log4j.RollingFileAppender</value>
+                </item>
+                <item>
+                    <key>log4j.logger.org.springframework</key>
+                    <value>ERROR</value>
+                </item>
+                <item>
+                    <key>com.alibaba.druid.pool.DruidDataSource</key>
+                    <value>ERROR</value>
+                </item>
+                <item>
+                    <key>log4j.appender.R.File</key>
+                    <value>e://log/elab-core1.log</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.R.encoding</key>
+                    <value>UTF-8</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.R.MaxFileSize</key>
+                    <value>1024KB</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.R.MaxBackupIndex</key>
+                    <value>10</value>
+                </item>
+                <item>
+                    <key>log4j.appender.R.layout</key>
+                    <value>org.apache.log4j.PatternLayout</value>
+                </item>
+                <item>
+                    <key>log4j.appender.R.layout.ConversionPattern</key>
+                    <value>%d [%t] %-5p %c - %m%n</value>
+                </item>
+            </properties>
+        </log>
+        <!-- 生产环境用 -->
+        <log name="log4jMongoDBAdapter" type="com.elab.core.log.adapter.Log4jMongoDBAdapter" logDebug="true" logInfo="true">
+            <properties>
+                <item>
+                    <key>log4j.rootLogger</key>
+                    <value>debug, MongoDB</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB</key>
+                    <value>org.log4mongo.MongoDbPatternLayoutAppender</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.Threshold</key>
+                    <value>debug</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.hostname</key>
+                    <value>192.168.0.23</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.port</key>
+                    <value>27017</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.databaseName</key>
+                    <value>logdb</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.collectionName</key>
+                    <value>SM</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.userName</key>
+                    <value>dbuser</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.password</key>
+                    <value>elab123</value>
+                </item>
+
+                <item>
+                    <key>log4j.appender.MongoDB.layout</key>
+                    <value>com.elab.core.log.adapter.MongoDbPatternLayout</value>
+                </item>
+            </properties>
+        </log>
+    </logManager>
+
+</global>

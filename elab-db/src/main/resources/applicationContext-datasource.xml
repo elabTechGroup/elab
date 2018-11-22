@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.elab.core.*">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- mvc -->
+    <context:annotation-config />
+
+    <!-- 多数据源切面类 -->
+    <bean id="manyDataSourceAspect" class="com.elab.core.aop.DataSourceAspect" />
+    <!-- 多数据Aop配置 -->
+    <aop:config proxy-target-class="true">
+        <!-- 定义一个切入点表达式： 拦截哪些方法 -->
+        <aop:aspect ref="manyDataSourceAspect">
+            <aop:pointcut id="serviceTarget"
+                          expression="execution(* com.elab.core.service..*.*(..))"/>
+            <aop:before method="before" pointcut="execution(* com.elab.core.service..*.*(..))"></aop:before>
+        </aop:aspect>
+    </aop:config>
+
+    <!-- DAO切面类 -->
+    <bean id="daoAspect" class="com.elab.core.aop.DaoAspect" />
+    <!-- DAO的Aop配置 -->
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="daoTarget"
+                      expression="execution(* com.elab.core.dao..*.*(..))"/>
+        <aop:aspect ref="daoAspect">
+
+            <aop:before method="before" pointcut="execution(* com.elab.core.dao..*.*(..))"></aop:before>
+            <aop:after-returning
+                    pointcut-ref="daoTarget"
+                    arg-names="point,retValue"
+                    returning="retValue"
+                    method="after"
+            />
+
+        </aop:aspect>
+    </aop:config>
+
+<!--
+    &lt;!&ndash; Service切面类 &ndash;&gt;
+    <bean id="serviceAspect" class="com.elab.core.aop.ServiceAspect" />
+    &lt;!&ndash; Service的Aop配置 &ndash;&gt;
+    <aop:config proxy-target-class="true">
+        <aop:aspect ref="serviceAspect">
+            <aop:before method="before" pointcut="execution(* com.elab.core.service..*.*(..))"></aop:before>
+            <aop:after-returning
+                    pointcut="execution(* com.elab.core.service..*.*(..))"
+                    arg-names="point,retValue"
+                    returning="retValue"
+                    method="afterService"
+            />
+
+        </aop:aspect>
+    </aop:config>-->
+
+    <context:property-placeholder location="classpath:database.properties" />
+
+    <bean id="default" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${default.driverClassName}"></property>
+        <property name="url" value="${default.url}"></property>
+        <property name="username" value="${default.username}"></property>
+        <property name="password" value="${default.password}"></property>
+        <property name="filters" value="${default.filters}" />
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${default.initialSize}" />
+        <property name="minIdle" value="${default.minIdle}" />
+        <property name="maxActive" value="${default.maxActive}" />
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${default.maxWait}" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${default.timeBetweenEvictionRunsMillis}" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${default.minEvictableIdleTimeMillis}" />
+        <property name="testWhileIdle" value="${default.testWhileIdle}" />
+        <property name="testOnBorrow" value="${default.testOnBorrow}" />
+        <property name="testOnReturn" value="${default.testOnReturn}" />
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="${default.poolPreparedStatements}" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+    </bean>
+
+    <bean id="system" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${system.driverClassName}"></property>
+        <property name="url" value="${system.url}"></property>
+        <property name="username" value="${system.username}"></property>
+        <property name="password" value="${system.password}"></property>
+        <property name="filters" value="${system.filters}" />
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${system.initialSize}" />
+        <property name="minIdle" value="${system.minIdle}" />
+        <property name="maxActive" value="${system.maxActive}" />
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${system.maxWait}" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${system.timeBetweenEvictionRunsMillis}" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${system.minEvictableIdleTimeMillis}" />
+        <property name="testWhileIdle" value="${system.testWhileIdle}" />
+        <property name="testOnBorrow" value="${system.testOnBorrow}" />
+        <property name="testOnReturn" value="${system.testOnReturn}" />
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="${system.poolPreparedStatements}" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+    </bean>
+
+    <bean id="test" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${test.driverClassName}"></property>
+        <property name="url" value="${test.url}"></property>
+        <property name="username" value="${test.username}"></property>
+        <property name="password" value="${test.password}"></property>
+        <property name="filters" value="${test.filters}" />
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${test.initialSize}" />
+        <property name="minIdle" value="${test.minIdle}" />
+        <property name="maxActive" value="${test.maxActive}" />
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${test.maxWait}" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${test.timeBetweenEvictionRunsMillis}" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${test.minEvictableIdleTimeMillis}" />
+        <property name="testWhileIdle" value="${test.testWhileIdle}" />
+        <property name="testOnBorrow" value="${test.testOnBorrow}" />
+        <property name="testOnReturn" value="${test.testOnReturn}" />
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="${test.poolPreparedStatements}" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+    </bean>
+    <!-- 配置多数据源映射关系 -->
+    <bean id="multipleDataSource" class="com.elab.core.datasource.MultipleDataSource">
+        <!-- 默认目标数据源为你主库数据源 -->
+        <property name="defaultTargetDataSource" ref="default"/>
+        <property name="targetDataSources">
+            <map>
+                <entry value-ref="default" key="default"/>
+                <entry value-ref="system" key="system"/>
+                <entry value-ref="test" key="test"/>
+            </map>
+        </property>
+    </bean>
+
+
+    <!-- 配置RestTemplate -->
+    <!--Http client Factory-->
+    <bean id="httpClientFactory" class="org.springframework.http.client.SimpleClientHttpRequestFactory">
+        <property name="connectTimeout"  value="36000"/>
+        <property name="readTimeout"  value="36000"/>
+    </bean>
+    <!--RestTemplate-->
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <constructor-arg ref="httpClientFactory"/>
+    </bean>
+
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name = "dataSource" ref="multipleDataSource"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="multipleDataSource" />
+        <qualifier value=""/>
+    </bean>
+
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+
+
+    <!-- 异常切面类 -->
+    <bean id="exceptionAspect" class="com.elab.core.aop.ExceptionAspect" />
+    <!-- 异常Aop配置 -->
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="methodPointcut" expression="execution(* com.elab.core.service..*(..)) or execution(* com.elab.core.controller..*(..)) and
+        	@annotation(com.elab.core.aop.annotations.ExceptionHandle)"/>
+        <aop:advisor advice-ref="exceptionAspect" pointcut-ref="methodPointcut" />
+    </aop:config>
+
+
+    <!-- 使用annotation定义事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"
+                          proxy-target-class="true" ></tx:annotation-driven>
+</beans>

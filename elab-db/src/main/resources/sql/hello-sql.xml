@@ -1,0 +1,72 @@
+<sqlGroup name="hello">
+    <sql id="list">
+        select * from users where status=1 and employeeno=:employeeno and
+        employeename=:employeename and phone=:phone and email=:email
+    </sql>
+
+    <sql id="single">
+        select id,name,value,type,parentcode,remark,status from enumeration where status=1 and name like :name and value=:value and type=:type
+    </sql>
+
+    <sql id="insert">
+        INSERT INTO enumeration (name, value, type, parentcode, remark, createtime, status, lasterupdate)
+        VALUES (:name, :value, :type, :parentcode, :remark, SYSDATE(), :status, sysdate())
+
+    </sql>
+
+    <sql id="update">
+        update enumeration set name = :name,remark=:remark where id = :id and type = :type and status = :status
+    </sql>
+
+    <sql id="updateObject">
+        update enumeration set name = :name,remark=:remark where id = :id and type = :type
+    </sql>
+
+    <sql id="delete">
+        delete from enumeration where type=:type
+    </sql>
+
+
+    <sql id="moreList">
+        <!--select c.id,c.loginid,c.email,e.nickname from customer c
+        left join customer_ext e on e.customerid = c.id and e.createdate >= :createdate0 and e.createdate &lt;= :createdate1
+        where c.loginid like :loginid and c.status in (:status)
+
+-->
+        select product,project,(if(system=1,concat('IOS_',version),concat('Android_',version))) version,system,sum(count) visit_num, (sum(uid_count)+sum(phone_count)) activity_num,
+        count(system) start_num, sum(usetime) usetime,truncate(sum(count)/(sum(uid_count)+sum(phone_count)),2) avg_visit_num from V_REALTIMEVISITOR
+        where product=:product and project=:project
+        group by version,system,product,project
+    </sql>
+
+    <sql id="moreList2">
+        select s.id subsubjectid,s.poiid,p.title,p.remark,s.plancode,c.plan_name,c.layoutplan_id,l.are,u.buildingnum,
+        l.sleeveare,l.poolare,l.multifunctional,l.attr1,l.attr2,c.attr3,l.house_unitid,l.turned,l.bedroom,
+        concat(convert(number_convert(l.bedroom) using utf8mb4),'室',convert(number_convert(l.sittingroom) using utf8mb4),'厅',convert(number_convert(l.bathroom) using utf8mb4),'卫') as layout_alias
+        from t_subject_poi s
+        left join t_poi p on p.id = s.poiid
+        left join c_plancode c on c.plan_code = s.plancode
+        left join c_layout_plan l on l.id = c.layoutplan_id
+        left join house_unit u on l.house_unitid=u.id
+        where s.status = 1 and l.status = 1 and c.status = 1 and u.status = 1
+        and s.subsubjectid in(select id subsubjectid from t_child_subject where subjectid = :subjectid)
+        and s.plancode is not null and s.plancode != "" and s.plancode like :plancode order by s.sortno desc
+    </sql>
+
+
+    <sql id="template">
+        SELECT re.id,re.name,re.buildingnum,re.frame_code,re.template_code,
+        re.layoutplancode,re.remark,re.status,re.isupdate FROM V_LAYOUT_TEMPLATE re
+        where re.name like :name and re.buildingnum like :buildingnum and re.frame_code like :frame_code
+        and re.template_code like :template_code and re.layoutplancode like :layoutplancode
+        and re.status=:status and re.isupdate=:isupdate order by id asc
+    </sql>
+
+    <sql id="demo2">
+        select * from timed_job
+        where
+        project = :project
+        and status=1
+        group by id
+    </sql>
+</sqlGroup>
